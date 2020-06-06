@@ -9,6 +9,7 @@
     "dev": "nodemon app.js"
   },
   "dependencies": {
+    "aws-param-store": "^3.2.0",
     "discord.io": "^2.5.3",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",

@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
+const awsParamStore = require( 'aws-param-store' );
 require("dotenv").config();
 
 const https = require('https');
@@ -41,9 +42,9 @@ client.on("message", msg => {
     
 
 
-    
-//   if (msg.content.toLowerCase().includes(messages)) {
-//     msg.reply("welcome to flavortown")
-//   }
-
-client.login(process.env.BOT_TOKEN)
+    awsParamStore.getParameter( '/project1/my-parameter', { region: 'us-east-1' } )
+    .then( (parameter) => {
+ 
+      client.login(parameter)
+        // Parameter info object for '/project1/my-parameter'
+    });
