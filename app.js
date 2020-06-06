@@ -13,7 +13,7 @@ client.on("message", msg => {
   let theMessage = msg.content.toLowerCase().replace(/\s/g,'');
   console.log(theMessage);
 
-  if (theMessage === "flavortown") {
+  if (theMessage.includes(theMessage)) {
 
     https.get('https://api.giphy.com/v1/gifs/search?api_key=KPuzM4uWpifP2TSslQDOG5ALwjwj0TzN&q=guyfieri', (res) => {
     //   console.log('statusCode:', res.statusCode);
