@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
+require("./dotenv").config();
 
 const https = require('https');
 let response;
@@ -45,4 +46,4 @@ client.on("message", msg => {
 //     msg.reply("welcome to flavortown")
 //   }
 
-client.login("NzE3ODgzODY2NjY4NDY2MTk2.XtvTuw.WOYRSxkt1pJz09z2q9TtMKhSjwI")
+client.login(process.env.BOT_TOKEN)
