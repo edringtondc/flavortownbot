@@ -14,6 +14,13 @@ client.on("message", msg => {
   console.log(theMessage);
 
   if (theMessage.includes("flavortown")) {
+    console.log(client.user.id)
+    console.log(msg.author)
+    
+    
+    if(client.user === msg.author){
+      return
+    }
 
     https.get('https://api.giphy.com/v1/gifs/search?api_key=KPuzM4uWpifP2TSslQDOG5ALwjwj0TzN&q=guyfieri', (res) => {
     //   console.log('statusCode:', res.statusCode);
