@@ -9,8 +9,12 @@ client.on("ready", () => {
 // getGif()
   console.log(`Logged in as ${client.user.tag}!`)
 })
-client.on("message", msg => {   
-    if (msg.content.toLowerCase().includes("flavortown") ) {
+client.on("message", msg => {  
+  let theMessage = msg.content.toLowerCase().replace(/\s/g,'');
+  console.log(theMessage);
+
+  if (theMessage === "flavortown") {
+
     https.get('https://api.giphy.com/v1/gifs/search?api_key=KPuzM4uWpifP2TSslQDOG5ALwjwj0TzN&q=guyfieri', (res) => {
     //   console.log('statusCode:', res.statusCode);
     //   console.log('headers:', res.headers);
@@ -22,12 +26,8 @@ client.on("message", msg => {
         // at this point, `body` has the entire request body stored in it as a string
         const json = JSON.parse(body);
         let randomNum = Math.floor(Math.random() * json.data.length)
-        console.log("randomNum: " + randomNum)
         response = json.data[randomNum].images.downsized_large.url;
-
-        console.log("reply " + response);
-        
-        console.log("response " + response)        
+        console.log(response)
         msg.reply(response)
                    // msg.reply("welcome to flavor town!");
                  
