@@ -1,6 +1,5 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
-const awsParamStore = require( 'aws-param-store' );
 require("dotenv").config();
 
 const https = require('https');
@@ -39,12 +38,6 @@ client.on("message", msg => {
     }).on('error', (e) => {
       console.error(e);
     });
-    
-
-
-    awsParamStore.getParameter( '/project1/my-parameter', { region: 'us-east-1' } )
-    .then( (parameter) => {
  
-      client.login(parameter)
+      client.login(process.env.BOT_TOKEN)
         // Parameter info object for '/project1/my-parameter'
-    });
