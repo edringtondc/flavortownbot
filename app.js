@@ -13,7 +13,7 @@ client.on("message", msg => {
   let theMessage = msg.content.toLowerCase().replace(/\s/g,'');
   console.log(theMessage);
 
-  if (theMessage.includes("flavortown")) {
+  if (theMessage.includes("flavortown") || theMessage.includes("flavourtown")) {
     console.log(client.user.id)
     console.log(msg.author)
     
